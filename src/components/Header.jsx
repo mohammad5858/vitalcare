@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../assets/logo.jpeg";
+import logo from "../assets/logo.png";
 
 const Header = () => {
   const scrollToSection = (sectionId) => {
@@ -14,7 +14,6 @@ const Header = () => {
       <nav className="nav-container">
         <div className="logo-container">
           <img src={logo} alt="VitalCare Logo" className="logo" />
-          {/* <div className="logo-text">VitalCare</div> */}
         </div>
         <ul className="nav-links">
           <li>

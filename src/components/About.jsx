@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../assets/logo.jpeg";
+import patientcare from "../assets/patientcare.jpeg";
 
 const About = () => {
   return (
@@ -34,7 +34,7 @@ const About = () => {
           </div>
           <div className="about-image">
             <div className="about-logo-container">
-              <img src={logo} alt="VitalCare Logo" className="about-logo" />
+              <img src={patientcare} alt="VitalCare Patient Care" className="about-logo" />
             </div>
           </div>
         </div>
