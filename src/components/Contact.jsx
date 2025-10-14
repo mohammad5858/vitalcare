@@ -24,28 +24,32 @@ const Contact = () => {
     setSubmitStatus("");
 
     try {
-      // EmailJS configuration - you'll need to set these up
+      // EmailJS configuration
       const templateParams = {
         from_name: formData.name,
         from_email: formData.email,
         phone: formData.phone,
         message: formData.message,
-        to_email: "your-email@gmail.com", // Replace with your Gmail address
+        reply_to: formData.email,
       };
 
-      // You'll need to replace these with your actual EmailJS credentials
-      await emailjs.send(
-        "YOUR_SERVICE_ID", // Replace with your EmailJS service ID
-        "YOUR_TEMPLATE_ID", // Replace with your EmailJS template ID
+      console.log("Sending email with params:", templateParams);
+
+      // EmailJS send
+      const result = await emailjs.send(
+        "service_4jzfz2h", // Your EmailJS service ID
+        "template_n9i45vs", // Your EmailJS template ID
         templateParams,
-        "YOUR_PUBLIC_KEY" // Replace with your EmailJS public key
+        "UXI3Bjc3p_47K1Tuq" // Your EmailJS public key
       );
 
+      console.log("Email sent successfully:", result);
       setSubmitStatus("success");
       setFormData({ name: "", email: "", phone: "", message: "" });
     } catch (error) {
       setSubmitStatus("error");
       console.error("Email sending failed:", error);
+      console.error("Error details:", error.text || error.message);
     } finally {
       setIsSubmitting(false);
     }
